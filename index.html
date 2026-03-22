@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>旅游决策者</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">旅游决策者</h1>
+      <p class="subtitle">让她来回答这些，你来规划旅程</p>
+    </header>
+
+    <div id="quiz-page" class="page">
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <span id="progress-text" class="progress-text">1 / 18</span>
+      </div>
+
+      <div class="question-container">
+        <span id="category" class="category"></span>
+        <h2 id="question" class="question"></h2>
+      </div>
+
+      <div id="options" class="options"></div>
+
+      <div class="navigation">
+        <button id="prev-btn" class="btn btn-secondary" disabled>
+          <span class="btn-icon">←</span>
+          上一题
+        </button>
+        <button id="next-btn" class="btn btn-primary" disabled>
+          下一题
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="result-page" class="page hidden">
+      <div class="result-header">
+        <h2 class="result-title">旅游偏好摘要</h2>
+        <p class="result-subtitle">以下是她的旅行回答</p>
+      </div>
+      <div id="result-content" class="result-content"></div>
+      <div class="result-actions">
+        <button id="copy-btn" class="btn btn-primary btn-block">
+          复制结果
+        </button>
+        <button id="restart-btn" class="btn btn-secondary btn-block">
+          重新测试
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
