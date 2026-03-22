@@ -142,10 +142,13 @@
 
   function handleSingleSelect(q, value) {
     if (value && value.startsWith('custom_')) {
-      const inputValue = customInputs[q.id];
-      if (!inputValue || !inputValue.trim()) {
-        return;
-      }
+      answers[q.id] = value;
+      renderQuestion(currentIndex);
+      setTimeout(() => {
+        const inputEl = document.querySelector('.custom-input');
+        if (inputEl) inputEl.focus();
+      }, 50);
+      return;
     }
     answers[q.id] = value;
     renderQuestion(currentIndex);
@@ -153,10 +156,22 @@
 
   function handleMultiSelect(q, value) {
     if (value && value.startsWith('custom_')) {
-      const inputValue = customInputs[q.id];
-      if (!inputValue || !inputValue.trim()) {
-        return;
+      if (!answers[q.id]) answers[q.id] = [];
+      const idx = answers[q.id].indexOf(value);
+      if (idx > -1) {
+        answers[q.id].splice(idx, 1);
+      } else {
+        if (q.maxSelect && answers[q.id].length >= q.maxSelect) {
+          return;
+        }
+        answers[q.id].push(value);
       }
+      renderQuestion(currentIndex);
+      setTimeout(() => {
+        const inputEl = document.querySelector('.custom-input');
+        if (inputEl) inputEl.focus();
+      }, 50);
+      return;
     }
 
     if (!answers[q.id]) {
