@@ -119,11 +119,9 @@ const questions = [
     question: "这次旅行想和谁一起？",
     type: "single",
     options: [
-      { value: "couple", label: "两人世界（情侣/夫妻）", icon: "💑" },
-      { value: "family_kids", label: "带娃家庭（亲子游）", icon: "👨‍👩‍👧" },
-      { value: "family_no_kids", label: "家人同行（不带娃）", icon: "👨‍👩‍👧‍👦" },
-      { value: "friends", label: "朋友结伴（闺蜜/兄弟/室友）", icon: "👯" },
-      { value: "solo", label: "独自旅行（一个人散心）", icon: "🎒" },
+      { value: "boyfriend", label: "和男友", icon: "�" },
+      { value: "friends", label: "和闺蜜", icon: "👯" },
+      { value: "three_people", label: "三个人一起", icon: "👫" },
       { value: "other", label: "其他（自己输入）", icon: "✏️", isCustom: true }
     ]
   },
